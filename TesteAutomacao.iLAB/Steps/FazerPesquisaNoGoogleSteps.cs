@@ -22,18 +22,24 @@ namespace TesteAutomacao.iLAB.Steps
         public void DadoQueEuEstouNaPaginaDoGoogle()
         {
             _googlePage.CarregarPagina();
+            _pesquisaGoogle.TakeScreenshot(@"c:\Screenshot\EntaoOSistemaExibeOResultadoDaPesquisa\", $"{DateTime.Now.ToString("dd_MM_yyyy_HH_mm_ss")}.png");
+
         }
         
         [When(@"eu preencher o campo de busca")]
         public void QuandoEuPreencherOCampoDeBusca()
         {
             _googlePage.PreencheCampoDeTexto("iLAB Quality");
+            _pesquisaGoogle.TakeScreenshot(@"c:\Screenshot\EntaoOSistemaExibeOResultadoDaPesquisa\", $"{DateTime.Now.ToString("dd_MM_yyyy_HH_mm_ss")}.png");
+
         }
         
         [When(@"eu clico  no botão de pesquisa")]
         public void QuandoEuClicoNoBotaoDePesquisa()
         {
             _googlePage.SubmeterAPesquisa();
+            _pesquisaGoogle.TakeScreenshot(@"c:\Screenshot\EntaoOSistemaExibeOResultadoDaPesquisa\", $"{DateTime.Now.ToString("dd_MM_yyyy_HH_mm_ss")}.png");
+
         }
         
         [Then(@"o  sistema exibe o resultado da pesquisa")]

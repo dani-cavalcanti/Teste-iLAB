@@ -21,6 +21,7 @@ namespace TesteAutomacao.iLAB.Steps
         [Given(@"que  eu estou na página do Google")]
         public void DadoQueEuEstouNaPaginaDoGoogle()
         {
+        //Abrindo a página principal do Google
             _googlePage.CarregarPagina();
             _pesquisaGoogle.TakeScreenshot(@"c:\Screenshot\EntaoOSistemaExibeOResultadoDaPesquisa\", $"{DateTime.Now.ToString("dd_MM_yyyy_HH_mm_ss")}.png");
 
@@ -29,6 +30,7 @@ namespace TesteAutomacao.iLAB.Steps
         [When(@"eu preencher o campo de busca")]
         public void QuandoEuPreencherOCampoDeBusca()
         {
+        // Digitando o texto a ser pesquisado
             _googlePage.PreencheCampoDeTexto("iLAB Quality");
             _pesquisaGoogle.TakeScreenshot(@"c:\Screenshot\EntaoOSistemaExibeOResultadoDaPesquisa\", $"{DateTime.Now.ToString("dd_MM_yyyy_HH_mm_ss")}.png");
 
@@ -37,6 +39,7 @@ namespace TesteAutomacao.iLAB.Steps
         [When(@"eu clico  no botão de pesquisa")]
         public void QuandoEuClicoNoBotaoDePesquisa()
         {
+        // Clicando no botão "Pesquisa Google"
             _googlePage.SubmeterAPesquisa();
             _pesquisaGoogle.TakeScreenshot(@"c:\Screenshot\EntaoOSistemaExibeOResultadoDaPesquisa\", $"{DateTime.Now.ToString("dd_MM_yyyy_HH_mm_ss")}.png");
 
@@ -45,6 +48,7 @@ namespace TesteAutomacao.iLAB.Steps
         [Then(@"o  sistema exibe o resultado da pesquisa")]
         public void EntaoOSistemaExibeOResultadoDaPesquisa()
         {
+        //Exibindo o resultado da pesquisa
             _pesquisaGoogle.AcharBotao();
             _pesquisaGoogle.TakeScreenshot(@"c:\Screenshot\EntaoOSistemaExibeOResultadoDaPesquisa\", $"{DateTime.Now.ToString("dd_MM_yyyy_HH_mm_ss")}.png");
 
@@ -55,6 +59,7 @@ namespace TesteAutomacao.iLAB.Steps
 
         public static void Log()
         {
+        // Gerando log de evidência
             LogEvidenciaTeste.Log(String.Format($"{"Log criado em "} : {DateTime.Now}"), "ArquivoLog");
             LogEvidenciaTeste.Log("Evidência de Teste");
 
